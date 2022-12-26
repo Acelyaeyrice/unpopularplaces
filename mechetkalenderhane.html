@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="style_krepostanadoluhisari.css">
+  <meta charset="utf-8">
+  <title> Мечеть Календерхане </title>
+</head>
+<body>
+  <div id='main_content'>
+      <div id='iconplustitle'>
+        <div id='mainicon'>
+          <a href="main.html"> <img src="images/homeicon.png"> </a>
+        </div>
+        <div class='main_title1'>
+          Мечеть Календерхане
+        </div>
+      </div>
+      <div id='mid_content'>
+        <div id='small_content'>
+          <div id='complete_image'>
+            <div class='arrows'>
+              <img src="images/arrows.png"  Onclick= "change('left')" >
+            </div>
+            <div id='place_image'>
+              <img  id='currentimage' src="images/main1_2.jpg" onClick="appear()" alt="1"  >
+            </div>
+            <div class='arrows'>
+              <img src="images/arrows.png" id='flip_image' Onclick= "change('right')">
+            </div>
+          </div>
+          <div id='place_location'> Kalenderhane Mahallesi, 16 Mart Sehitleri Cd. No: 16 Vefa, Fatih, Стамбул 34134 Турция
+          </div>
+        </div>
+        <div id='placeinfo'> Мечеть Календерхане – это бывшая византийская церковь Богоматери Кариотиссы, построенная на фундаменте древних римских бань. Параллельно баням строился и акведук Валента. Примерно в VI веке, на месте бань была построена церковь, стена которой стала частью акведука, а основания бань стали ее фундаментом.
+          В конце XII века на фундаментах былых строений, была построена новая церковь, так как предыдущая сгорела в одном из больших пожаров того времени. Церковь Богоматери Кариотиссы перестраивалась еще 19 раз. После взятия турками Константинополя в 1453 году, церковь стала обителью дервишей до XVIII века. И в это время ее превращают в мечеть Календерхане, в память об общине дервишей Календер.
+
+        </div>
+      </div>
+
+
+
+  </div>
+
+  <div id='aboveall' onClick="dissappear()"   >
+      <img src="images/main1_2.jpg"  >
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  function appear(){
+    document.getElementById('aboveall').style.display= 'flex';
+  }
+  function dissappear(){
+    document.getElementById('aboveall').style.display= 'none';
+  }
+  function change(direction){
+    var max= 3;
+    var page_num = 2;
+    var change  = document.getElementById('currentimage').alt;
+    if(direction=='left'){
+      if(change != 1) change = change * 1-1;
+
+    }else{
+      if(change != max) change = change * 1+1;
+    }
+    document.getElementById('currentimage').alt = change;
+    var address = "images/main"+change+"_"+ page_num + ".jpg";
+    document.getElementById('currentimage').src=address;
+    document.getElementById('aboveimage').src=address;
+  }
+</script>
+</body>
+</html>

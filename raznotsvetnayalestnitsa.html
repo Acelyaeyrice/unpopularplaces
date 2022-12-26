@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="style_krepostanadoluhisari.css">
+  <meta charset="utf-8">
+  <title> Разноцветная лестница </title>
+</head>
+<body>
+  <div id='main_content'>
+    <div id='iconplustitle'>
+      <div id='mainicon'>
+        <a href="main.html"> <img src="images/homeicon.png"> </a>
+      </div>
+    <div class='main_title1'>
+    Разноцветная лестница
+    </div>
+  </div>
+    <div id='mid_content'>
+      <div id='small_content'>
+        <div id='complete_image'>
+          <div class='arrows'>
+            <img src="images/arrows.png" Onclick= "change('left')">
+          </div>
+          <div id='place_image'>
+            <img  id='currentimage' src="images/main1_3.jpg" onclick="appear()" alt="1">
+          </img>
+          </div>
+          <div class='arrows'>
+            <img src="images/arrows.png" id='flip_image' Onclick= "change('right')">
+          </div>
+        </div>
+        <div id='place_location'> Sali Pazari Yks. No:2 Purtelas Hasan Efendi Mahallesi, Стамбул 34427 Турция
+        </div>
+      </div>
+      <div id='placeinfo'> Несмотря на то, что разноцветная лестница уже стала довольно популярным местом среди гостей Стамбула, она по-прежнему выглядит необычно, и вызывает восторг у фотографов. Как появилось это произведение искусства? Как-то местный житель разрисовал лестницу, чтобы украсить свой район. Но власти посчитали это актом вандализма и через пару дней перекрасили её в серый цвет! После этого народ народ в честь протеста разукрасил несколько лестниц в этом районе, которые после этого уже никто не закрашивал.
+
+      </div>
+    </div>
+
+
+
+  </div>
+  <div id='aboveall' onClick="dissappear()"   >
+      <img src="images/main1_3.jpg"  >
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  function appear(){
+    document.getElementById('aboveall').style.display= 'flex';
+  }
+  function dissappear(){
+    document.getElementById('aboveall').style.display= 'none';
+  }
+  function change(direction){
+    var max= 3;
+    var page_num = 3;
+    var change  = document.getElementById('currentimage').alt;
+    if(direction=='left'){
+      if(change != 1) change = change * 1-1;
+
+    }else{
+      if(change != max) change = change * 1+1;
+    }
+    document.getElementById('currentimage').alt = change;
+    var address = "images/main"+change+"_"+ page_num + ".jpg";
+    document.getElementById('currentimage').src=address;
+    document.getElementById('aboveimage').src=address;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
